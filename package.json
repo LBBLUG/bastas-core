@@ -1,0 +1,25 @@
+{
+  "name": "bastas-core",
+  "version": "1.0.0",
+  "description": "Core logic for other bastas projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bastas"
+  ],
+  "author": "Dan Ferguson",
+  "license": "ISC",
+  "typings": "lib/index",
+  "files": [
+    "lib/"
+  ],
+  "dependencies": {
+    "typescript": "^1.8.10",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "tslint-config-standard": "^1.3.0"
+  }
+}

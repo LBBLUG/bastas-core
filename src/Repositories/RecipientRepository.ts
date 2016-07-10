@@ -2,19 +2,19 @@
  * Created by daniefer on 7/9/16.
  */
 
-import { Recipient } from '../Models/Recipient'
+import { CoreRecipient } from '../Models/Recipient'
 import { BaseRepository } from "./BaseRepository";
 import { RepositoryKeyGenerator } from "./BaseRepositoryDelegates";
-import {Phone} from "../Models/Phone";
+import { Phone } from "../Models/Phone";
 
-export class RecipientRepository extends BaseRepository<string, Recipient> {
+export class RecipientRepository extends BaseRepository<string, CoreRecipient> {
 
-    constructor(keyGenerator: RepositoryKeyGenerator<Recipient, string>) {
+    constructor(keyGenerator: RepositoryKeyGenerator<CoreRecipient, string>) {
         super(keyGenerator, RecipientRepository.updateHandler, RecipientRepository.selectHandler)
         return
     }
 
-    private static updateHandler(sourceRecipient: Recipient, destRecipient: Recipient): void {
+    private static updateHandler(sourceRecipient: CoreRecipient, destRecipient: CoreRecipient): void {
         destRecipient.firstName = sourceRecipient.firstName;
         destRecipient.middleName = sourceRecipient.middleName;
         destRecipient.lastName = sourceRecipient.lastName;
@@ -24,7 +24,7 @@ export class RecipientRepository extends BaseRepository<string, Recipient> {
         destRecipient.gender = sourceRecipient.gender;
     };
 
-    private static selectHandler(recipientA: Recipient, matchesRecipientB: Recipient): boolean {
+    private static selectHandler(recipientA: CoreRecipient, matchesRecipientB: CoreRecipient): boolean {
         if (matchesRecipientB.firstName &&
             recipientA.firstName.indexOf(matchesRecipientB.firstName) < 0) {
             return false;

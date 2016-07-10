@@ -7,7 +7,9 @@
     "type": "git",
     "url": "https://github.com/LBBLUG/bastas-core"
   },
-  "contributors": ["Dan Ferguson <> (https://twitter.com/daniefer01)"],
+  "contributors": [
+    "Dan Ferguson <> (https://twitter.com/daniefer01)"
+  ],
   "homepage": "https://github.com/LBBLUG/bastas-core",
   "bugs": {
     "url": "https://github.com/LBBLUG/bastas-core/issues"
@@ -26,10 +28,12 @@
     "lib/"
   ],
   "engines": {
-    "node" : "0.12.2",
+    "node": "0.12.2",
     "npm": ">=3.8.6"
   },
   "dependencies": {
+    "assert": "^1.4.1",
+    "node-uuid": "^1.4.7",
     "typescript": "^1.8.10",
     "underscore": "^1.8.3"
   },

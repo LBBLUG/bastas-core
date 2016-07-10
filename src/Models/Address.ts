@@ -9,4 +9,8 @@ export class Address extends BaseModel<string> {
         super(id)
         return
     }
+    
+    public toString(): string {
+        return `${this.address}\n ${this.city}, ${this.state} ${this.zip}`
+    }
 }

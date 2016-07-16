@@ -1,4 +1,6 @@
 before_script:
+  - npm --version
+  - npm install -g npm
   - npm install -g gulp
   - npm install -g typings
   - npm install

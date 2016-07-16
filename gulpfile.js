@@ -1,6 +1,7 @@
 var gulp = require("gulp");
 var ts = require("gulp-typescript");
 var gulpTypings = require("gulp-typings");
+var merge = require('merge2');
 
 
 gulp.task("installTypings",function(){
@@ -9,11 +10,13 @@ gulp.task("installTypings",function(){
     return stream; // by returning stream gulp can listen to events from the stream and knows when it is finished.
 });
 
-var tsProject = ts.createProject('tsconfig.json');
-
 gulp.task("build", ["installTypings"], function () {
+    var tsProject = ts.createProject('tsconfig.json');
     var tsResult = tsProject.src()
         .pipe(ts(tsProject))
         .on('error', function() { process.exit(1) });
-    return tsResult.js.pipe(gulp.dest("lib"));
+    return merge([
+        tsResult.dts.pipe(gulp.dest('lib')),
+        tsResult.js.pipe(gulp.dest('lib'))
+    ]);
 });

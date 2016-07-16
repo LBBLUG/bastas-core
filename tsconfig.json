@@ -4,11 +4,9 @@
     "declaration": true,
     "target": "es5",
     "sourceMap": true,
-    "outDir": "lib/"
+    "outDir": "lib/",
+    "rootDir": "src/"
   },
-  "files": [
-    "src/**.ts"
-  ],
   "exclude": [
     "node_modules"
   ]

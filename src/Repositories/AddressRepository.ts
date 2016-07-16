@@ -4,7 +4,7 @@
 
 /// <reference path="../../typings/index.d.ts" />
 
-import {BaseRepository} from "../../lib/Repositories/BaseRepository";
+import {BaseRepository} from "./BaseRepository";
 import {Address} from "../Models/Address";
 import {RepositoryKeyGenerator} from "./BaseRepositoryDelegates";
 
@@ -12,7 +12,7 @@ export class AddressRepository extends BaseRepository<string, Address> {
     constructor(keyGenerator: RepositoryKeyGenerator<Address, string>) {
         super(keyGenerator, AddressRepository.updateHandler, AddressRepository.selectHandler)
     }
-
+ 
     private static updateHandler(sourceAddress: Address, destAddress: Address): void {
         destAddress.address = sourceAddress.address;
         destAddress.city = sourceAddress.city;

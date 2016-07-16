@@ -1,3 +1,4 @@
 before_script:
-  - sudo npm install -g gulp
+  - npm install -g gulp
+  - npm link gulp
 script: gulp

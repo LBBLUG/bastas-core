@@ -22,9 +22,9 @@
   ],
   "author": "Dan Ferguson",
   "license": "ISC",
-  "typings": "lib/index",
+  "typings": "src/index",
   "files": [
-    "lib/"
+    "src/"
   ],
   "engines": {
     "node": "0.12.2",

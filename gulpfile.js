@@ -11,8 +11,9 @@ gulp.task("installTypings",function(){
 
 var tsProject = ts.createProject('tsconfig.json');
 
-gulp.task("default", ["installTypings"], function () {
+gulp.task("build", ["installTypings"], function () {
     var tsResult = tsProject.src()
-        .pipe(ts(tsProject));
+        .pipe(ts(tsProject))
+        .on('error', function() { process.exit(1) });
     return tsResult.js.pipe(gulp.dest("lib"));
 });

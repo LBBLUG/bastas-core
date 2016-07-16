@@ -1,8 +1,11 @@
 before_script:
-  - npm --version
-  - npm install -g npm
-  - npm install -g gulp
-  - npm install -g typings
-  - npm install
-  - npm install --dev
+- npm --version
+- npm install -g npm
+- npm install -g gulp
+- npm install -g typings
+- npm install
+- npm install --dev
 script: gulp build
+notifications:
+  slack:
+    secure: V8/hxMsKPB/vofH/s3tzEpenmr1lbkq97u8mQEX7i/qGleuSAccRLascDp7Jj3UHI3kurBjxepn6Jq0imAaFDGSwS2KsbhwaAxk6xS7davIbwkTPB4DY1AN+XFGVqEzj6WzmT8SI49SrU830ijbPsypi4xipZdLUBV20KpILLl6QtEWb+v89waPwwLTM5St4NuwoDa/7OTvhmh8O3OjmiuSyi5hmmS4Y0BrWV/mz4sgjqoKlNB+pFs2OsIeWPPEbO77MX7FDZLEPyDzkBxmHGsruFeagxi28UfcwMjSQz0jxRlP3LVtHJjLxX7/pqXFM25pwQ0a3FoGor7ihkFDoksKNcwPyrnDaenXR8v3iJ1EOXAo9dmPbBKIEkWnsGS1tnSvkBp11rLkXhLZPpvSOZMCrPV90V+g/s6ZRagk2XFbMe3pMxIVgkUrJakh4KIPrbyTJsvIsHDKlq6IY6nJJd5Zzg1qzNBCQukKBZ6miTPHT6xgpakVvtvEbOhWH9e0f+PnQ94MkAI6NxFMXslVSyxFDKv1ZSHXjPv7Gf1zbhD0YSpTVaWRlvd5uUaxx6zLrHypkBDv9Ggc1fMLPX3gEIupqPPMa2QT487iJVv8BfCVeci45hQewPABUw5t9Gq/FmT+o0lcGritwjtLMm648fhgIeqPomiLJxzoOJ8U0NWM=

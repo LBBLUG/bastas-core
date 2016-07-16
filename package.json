@@ -25,7 +25,7 @@
   "license": "ISC",
   "typings": "lib/index",
   "files": [
-    "lib/"
+    "src/"
   ],
   "engines": {
     "node": "0.12.2",

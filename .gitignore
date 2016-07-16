@@ -44,5 +44,8 @@ jspm_packages
 *.js.map
 typings
 
+# Exclusion to make sure gulpfile is found
+!gulpfile.js
+
 # Don't promote files in the publis directory
 lib

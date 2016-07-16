@@ -4,7 +4,7 @@ before_script:
 - npm install -g gulp
 - npm install -g typings
 - npm install
-- npm install --dev
+- npm install --only=dev
 script: gulp build
 notifications:
   slack:

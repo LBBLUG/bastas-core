@@ -44,8 +44,8 @@ export class RecipientController {
         if (recipient.gifts) {
             _.forEach(recipient.gifts, (gift: Gift): void => {
                 if (!gift.id || gift.id == "") {
-                    let id = this.giftRepository.Create(gift);
-                    gift.id = id;
+                    let newGift = this.giftRepository.Create(gift);
+                    gift.id = newGift.id;
                 }
                 else {
                     this.giftRepository.Update(gift);
@@ -55,8 +55,8 @@ export class RecipientController {
         // if the address exits, create/update
         if (recipient.address) {
             if (!recipient.address.id && recipient.address.id == "") {
-                let id = this.addressRepository.Create(recipient.address);
-                recipient.address.id = id;
+                let newAddress = this.addressRepository.Create(recipient.address);
+                recipient.address.id = newAddress.id;
             }
             else {
                 this.addressRepository.Update(recipient.address);
@@ -64,8 +64,8 @@ export class RecipientController {
         }
         // now save the recipient
         if (!recipient.id || recipient.id == "") {
-            let id = this.recipientRepository.Create(recipient as CoreRecipient);
-            recipient.id = id;
+            let newRecipient = this.recipientRepository.Create(recipient as CoreRecipient);
+            recipient.id = newRecipient.id;
         }
         else {
             this.recipientRepository.Update(recipient);
